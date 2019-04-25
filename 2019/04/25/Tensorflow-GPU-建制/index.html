@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>草稿過程 · CRTao&#39;s Blog</title>
+    <title>Tensorflow-GPU 建制 · CRTao&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">漫無目的。</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">草稿過程</a>
+                <a href="#" class="post-name">Tensorflow-GPU 建制</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            草稿過程
+            Tensorflow-GPU 建制
             <!-- 404 -->
             
         </h1>
@@ -266,20 +266,20 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="生活">生活</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="程式">程式</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="畫畫">畫畫</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="專題">專題</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字數統計: <span class="post-count word-count">28</span>閱讀時長: <span class="post-count reading-time">1 min</span></span>
+                        <span>字數統計: <span class="post-count word-count">460</span>閱讀時長: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/04/18</span>
+                    <span class="post-intro-time">2019/04/25</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,18 +401,73 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>期中考前的繪畫動力特別大呢。</p>
-<p>比較怕上色會爆炸，用線稿去補好了。</p>
-<p><img src="/uploads/20190418_draw.jpg" alt></p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>建立完機器學習環境架構後，可以參考網路上的範例去建立網路了。</p>
+<p>通常是的 mnist 範例，有摸這塊的應該都知道這是機器學習的Hello World，這邊就不說了。</p>
+<p>但用CPU訓練的時間實在是太久了，所以要轉而使用GPU來做處理。</p>
+<p>這邊參考以下的安裝流程來進行，寫的蠻完整的。</p>
+<h4 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h4><blockquote>
+<p><a href="https://medium.com/@johnnyliao/%E5%9C%A8nvidia-mx150%E7%9A%84win10%E5%AE%89%E8%A3%9Dcuda-toolkit-cudnn-python-anaconda-and-tensorflow-91d4c447b60e" target="_blank" rel="noopener">在Nvidia MX150的Win10安裝CUDA Toolkit, cuDNN, Python(anaconda), and Tensorflow By @johnnyliao</a></p>
+</blockquote>
+<hr>
+<h3 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h3><p><strong>1. 確認 GPU 的相容性。</strong></p>
+<blockquote>
+<ul>
+<li>桌面右鍵 → NVIDIA 控制面板</li>
+<li>點擊左下角 系統資訊</li>
+<li>點擊 元素 分頁，找到 3D設定 的 NVCUDA.DLL</li>
+</ul>
+<p>此時就能查看到 driver的資訊了。</p>
+<p><strong>NVCUDA.DLL  26.21.14.3039  NVIDIA CUDA 10.1.120 driver</strong></p>
+<p>就可以得知目前支援 CUDA 10.1 的版本了。</p>
+<p>但在考量 tensorflow 與 CUDA 10.1 的兼容性，我還是選擇裝 CUDA 10.0。</p>
+</blockquote>
+<p><strong>2. 安裝 CUDA 10.0</strong></p>
+<blockquote>
+<p>去官網辦會員，找對應的版本與系統環境的安裝檔。</p>
+<p><br></p>
+<p>但要注意的是：</p>
+<p><a href="https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html#abstract" target="_blank" rel="noopener">CUDA Toolkit Documentation</a></p>
+<p>1.1 System Requirements 有四項。</p>
+<p>其中的 “A supported version of Microsoft Visual Studio”</p>
+<p><br></p>
+<p>嗯，我的電腦沒裝。</p>
+<p>找了各種VS的資訊後，用的方法是：安裝 NVIDIA Nsight Visual Studio Edition。</p>
+<p>之後就能成功安裝CUDA了。</p>
+</blockquote>
+<p><strong>3. 安裝 cuDNN</strong></p>
+<blockquote>
+<p>去官網找對應 CUDA的 cuDNN壓縮檔</p>
+<p>解壓縮後丟入CUDA的安裝位置就行了。</p>
+</blockquote>
+<p><strong>4. 在虛擬環境安裝 tensorflow-gpu</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv install tensorflow-gpu</span><br></pre></td></tr></table></figure>
+<p><strong>5. 檢查安裝是否成功</strong></p>
+<blockquote>
+<p>執行 python 後輸入：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from tensorflow.python.client import device_lib</span><br><span class="line">print(device_lib.list_local_devices())</span><br></pre></td></tr></table></figure>
+<p>或是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow as tf</span><br><span class="line">sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>照理說會抓到 GPU 的資訊。</p>
+</blockquote>
+<p><br></p>
+<p>這邊附上所使用的安裝檔</p>
+<p><a href="/uploads/20190425_installer.png"></a></p>
+<hr>
+<p>全部完成後，程式就用GPU來訓練了，速度真的差很多。</p>
+<p><a href="/uploads/20190425_tfgpurun.png"></a></p>
+<p>硬體架設好後，之後都是軟體的問題啦。</p>
+<p><br></p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://blog.crtao.nctu.me">Ling Yin-Tao</a>
-            </p><p>原文連結：<a href="http://blog.crtao.nctu.me/2019/04/18/草稿過程/">http://blog.crtao.nctu.me/2019/04/18/草稿過程/</a>
-            </p><p>發表日期：<a href="http://blog.crtao.nctu.me/2019/04/18/草稿過程/">April 18th 2019, 5:20:24 pm</a>
-            </p><p>更新日期：<a href="http://blog.crtao.nctu.me/2019/04/18/草稿過程/">April 18th 2019, 5:22:19 pm</a>
+            </p><p>原文連結：<a href="http://blog.crtao.nctu.me/2019/04/25/Tensorflow-GPU-建制/">http://blog.crtao.nctu.me/2019/04/25/Tensorflow-GPU-建制/</a>
+            </p><p>發表日期：<a href="http://blog.crtao.nctu.me/2019/04/25/Tensorflow-GPU-建制/">April 25th 2019, 10:27:22 pm</a>
+            </p><p>更新日期：<a href="http://blog.crtao.nctu.me/2019/04/25/Tensorflow-GPU-建制/">April 25th 2019, 11:14:29 pm</a>
             </p><p>版權聲明：本文採用<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh_TW">知識共享署名-非商業性 4.0 國際許可協議</a>進行許可</p>
         </div>
     
@@ -420,17 +475,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/04/23/4月風古戰/" title="4月風古戰">
-                    <div class="nextTitle">4月風古戰</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/04/17/建立機器學習環境架構/" title="建立機器學習環境架構">
-                    <div class="prevTitle">建立機器學習環境架構</div>
+                <a href="/2019/04/23/4月風古戰/" title="4月風古戰">
+                    <div class="prevTitle">4月風古戰</div>
                 </a>
             
         </li>
@@ -530,7 +580,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#參考文件"><span class="toc-number">1.1.</span> <span class="toc-text">參考文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步驟"><span class="toc-number">2.</span> <span class="toc-text">步驟</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
