@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>5月古戰場 · CRTao&#39;s Blog</title>
+    <title>FreeBSD Console Resolution Setting · CRTao&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">漫無目的。</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">5月古戰場</a>
+                <a href="#" class="post-name">FreeBSD Console Resolution Setting</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            5月古戰場
+            FreeBSD Console Resolution Setting
             <!-- 404 -->
             
         </h1>
@@ -266,22 +266,18 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="生活">生活</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="遊戲">遊戲</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="碧藍幻想">碧藍幻想</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="FreeBSD">FreeBSD</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字數統計: <span class="post-count word-count">65</span>閱讀時長: <span class="post-count reading-time">1 min</span></span>
+                        <span>字數統計: <span class="post-count word-count">133</span>閱讀時長: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/05/26</span>
+                    <span class="post-intro-time">2019/12/03</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -403,22 +399,36 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>土古戰場紀錄。</p>
-<p>2.0差一斧畢業，來不及生出來。</p>
-<p>46箱，明明貢獻比上次多，但是箱數變少。</p>
-<p><img src="/uploads/20190526_earth.png" alt></p>
-<p>另外這次拿到了古戰場勇者的稱號！</p>
-<p>拿好多勳章好爽呦……</p>
-<p>感謝團員的貢獻。</p>
+        <p>雖然已經設定了SSH，不會直接使用機器的Console進行操作，還是在這邊紀錄一下。</p>
+<blockquote>
+<p>在 /boot/loader.conf 新增</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kern.vty=sc</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重啟後應該可以 kldload vesa 了。除非boot完是在UEFI或EFI模式下。</p>
+</blockquote>
+<blockquote>
+<p>之後輸入 vidcontrol -i mode 可以檢視解析度編號，如果沒有再爬文找吧。</p>
+</blockquote>
+<blockquote>
+<p>找到需要的編號後，在 /etc/rc.conf 新增</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">allscreens_flags=&quot;MODE_273&quot;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重啟後就有新的解析度了。</p>
+</blockquote>
+<blockquote>
+<p>設定完已經3個月了，憑記憶筆記的可能會錯。</p>
+</blockquote>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://blog.crtao.nctu.me">Ling Yin-Tao</a>
-            </p><p>原文連結：<a href="http://blog.crtao.nctu.me/2019/05/26/5月古戰場/">http://blog.crtao.nctu.me/2019/05/26/5月古戰場/</a>
-            </p><p>發表日期：<a href="http://blog.crtao.nctu.me/2019/05/26/5月古戰場/">May 26th 2019, 11:49:06 pm</a>
-            </p><p>更新日期：<a href="http://blog.crtao.nctu.me/2019/05/26/5月古戰場/">May 26th 2019, 11:52:02 pm</a>
+            </p><p>原文連結：<a href="http://blog.crtao.nctu.me/2019/12/03/FreeBSD-Console-Resolution-Setting/">http://blog.crtao.nctu.me/2019/12/03/FreeBSD-Console-Resolution-Setting/</a>
+            </p><p>發表日期：<a href="http://blog.crtao.nctu.me/2019/12/03/FreeBSD-Console-Resolution-Setting/">December 3rd 2019, 9:41:30 pm</a>
+            </p><p>更新日期：<a href="http://blog.crtao.nctu.me/2019/12/03/FreeBSD-Console-Resolution-Setting/">December 3rd 2019, 9:53:54 pm</a>
             </p><p>版權聲明：本文採用<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh_TW">知識共享署名-非商業性 4.0 國際許可協議</a>進行許可</p>
         </div>
     
@@ -426,17 +436,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/12/03/FreeBSD-Console-Resolution-Setting/" title="FreeBSD Console Resolution Setting">
-                    <div class="nextTitle">FreeBSD Console Resolution Setting</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/04/25/Tensorflow-GPU-建制/" title="Tensorflow-GPU 建制">
-                    <div class="prevTitle">Tensorflow-GPU 建制</div>
+                <a href="/2019/05/26/5月古戰場/" title="5月古戰場">
+                    <div class="prevTitle">5月古戰場</div>
                 </a>
             
         </li>
