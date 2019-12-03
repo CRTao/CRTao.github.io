@@ -354,24 +354,13 @@
             雖然已經設定了SSH，不會直接使用機器的Console進行操作，還是在這邊紀錄一下。
 
 在 /boot/loader.conf 新增
-
 1kern.vty=sc
-
 重啟後應該可以 kldload vesa 了。除非boot完是在UEFI或EFI模式下。
-
-
 之後輸入 vidcontrol -i mode 可以檢視解析度編號，如果沒有再爬文找吧。
-
-
 找到需要的編號後，在 /etc/rc.conf 新增
-
 1allscreens_flags=&quot;MODE_273&quot;
-
 重啟後就有新的解析度了。
-
-
 設定完已經3個月了，憑記憶筆記的可能會錯。
-
 
         </div>
         <div class="abstract-post-meta">
@@ -1005,6 +994,14 @@ Paragr...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 10
@@ -1086,9 +1083,9 @@ Paragr...
     
         <span class="sidebar-tag-name" data-tags="碧藍幻想"><span class="iconfont-archer">&#xe606;</span>碧藍幻想</span>
     
-        <span class="sidebar-tag-name" data-tags="畫畫"><span class="iconfont-archer">&#xe606;</span>畫畫</span>
-    
         <span class="sidebar-tag-name" data-tags="專題"><span class="iconfont-archer">&#xe606;</span>專題</span>
+    
+        <span class="sidebar-tag-name" data-tags="畫畫"><span class="iconfont-archer">&#xe606;</span>畫畫</span>
     
         <span class="sidebar-tag-name" data-tags="FreeBSD"><span class="iconfont-archer">&#xe606;</span>FreeBSD</span>
     
