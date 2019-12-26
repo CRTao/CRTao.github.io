@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>CRTao&#39;s Blog</title>
+    <title>FreeBSD Passwd Recovery · CRTao&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">漫無目的。</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">FreeBSD Passwd Recovery</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">漫無目的。</a>
 </header>
@@ -220,24 +231,72 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            FreeBSD Passwd Recovery
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="FreeBSD">FreeBSD</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字數統計: <span class="post-count word-count">130</span>閱讀時長: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/12/26</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,255 +397,62 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/26/5月古戰場/">
-            
-                <span>5月古戰場</span>
-        </a>
-        <div class="abstract-content">
-            土古戰場紀錄。
-2.0差一斧畢業，來不及生出來。
-46箱，明明貢獻比上次多，但是箱數變少。
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>把使用者的密碼改壞了，這邊紀錄一下修復方法。</p>
+<hr>
+<p>Bootup時選擇 Single User Mode，</p>
+<p>這個 Enter full pathname of shell of RETURN for /bin/sh: 不管它，Enter。</p>
+<p>然後掛接目前(所有)的地方</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount  ##或 mount -a</span><br></pre></td></tr></table></figure>
+<p>通常預設的 / 是 read-only，這時候編輯都會被擋住，</p>
+<p>輸入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -u /</span><br></pre></td></tr></table></figure>
+<p>之後就可以編輯系統囉。</p>
+<p>如果忘記密碼的這時候打 passwd (username)就可以改密碼了。</p>
+<hr>
+<p>寫ShellScript, ZFS管理, 架FTP Server, 架Web Server。</p>
+<p>現在在研究什麼是NIS。</p>
 
-另外這次拿到了古戰場勇者的稱號！
-拿好多勳章好爽呦……
-感謝團員的貢獻。
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="生活">生活</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="遊戲">遊戲</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="碧藍幻想">碧藍幻想</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/23/4月風古戰/">
-            
-                <span>4月風古戰</span>
-        </a>
-        <div class="abstract-content">
-            風古戰場結束了。這邊紀錄一下。
-多了法武、2.0減緩後，騎空士們能力大增，排名線大幅上升。
-也新增了EX+難度，要2kw血。
-
-勉強過關啦，鍵數很多。
-
-反正主要目標是戰貨箱，這次打了47箱。
-
-終了10姐，接下目標是終8。
-但是金塊庫存剩4塊而已。
-慘。
-
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://blog.crtao.nctu.me">Ling Yin-Tao</a>
+            </p><p>原文連結：<a href="http://blog.crtao.nctu.me/2019/12/26/FreeBSD-Passwd-Recovery/">http://blog.crtao.nctu.me/2019/12/26/FreeBSD-Passwd-Recovery/</a>
+            </p><p>發表日期：<a href="http://blog.crtao.nctu.me/2019/12/26/FreeBSD-Passwd-Recovery/">December 26th 2019, 8:09:54 pm</a>
+            </p><p>更新日期：<a href="http://blog.crtao.nctu.me/2019/12/26/FreeBSD-Passwd-Recovery/">December 26th 2019, 8:27:25 pm</a>
+            </p><p>版權聲明：本文採用<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh_TW">知識共享署名-非商業性 4.0 國際許可協議</a>進行許可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="生活">生活</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="遊戲">遊戲</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="碧藍幻想">碧藍幻想</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/18/草稿過程/">
-            
-                <span>草稿過程</span>
-        </a>
-        <div class="abstract-content">
-            期中考前的繪畫動力特別大呢。
-比較怕上色會爆炸，用線稿去補好了。
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="生活">生活</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="畫畫">畫畫</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/16/阿卡夏/">
-            
-                <span>阿卡夏初見</span>
-        </a>
-        <div class="abstract-content">
-            第一次打阿卡夏，大約11點1x分進了18連車吧。
-看了很多資料、以保命優先的隊伍進了房間…
-準備跟著特動表走，結果…
-…
-…
-…
-血線根本掉不下去嘛。
-十幾隻兔子一直瘋狂奶人，怎麼跑T都是滿血呀。
-隊伍之後再往火力方面調整吧。
-
-車速越跑越慢，12e血量真猛啊。
-只是打了快2小時，還湊不齊一把武器的量。
-而且掉的武器碎片幾乎是我有的角色！！氣pupu。
-
-18連掉落：
-
-鑰匙 ×25劍碎×1   短碎×3斧碎×2   拳碎×2弓碎×4   銃碎×2刀碎×1   槍碎×0杖碎×2   琴碎×1
-
-
-大概要再跑…10車吧。
-痛扣。
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="生活">生活</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="遊戲">遊戲</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="碧藍幻想">碧藍幻想</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/15/打擊場打壘球/">
-            
-                <span>打擊場打壘球</span>
-        </a>
-        <div class="abstract-content">
-            去打擊場打球已經有一陣子了。
-因為在學校選修壘球，所以這週都在練壘球。
-只是一開始打不好，常常發力後都打不遠。
-後來請人幫忙錄姿勢後，發現自己的出棒時機點都太早，導致揮到一半時才在等球。
-變成了兩段式揮擊。
-百二公里的棒球與壘球的感覺差真多啊。
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="生活">生活</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="運動">運動</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/11/嘗試做部落格/">
-            
-                <span>嘗試做部落格</span>
-        </a>
-        <div class="abstract-content">
-            起因是看到同學有做，明明沒放什麼東西卻感覺潮到歪頭。所以也想動手玩玩看~
-瀏覽著就有注意到同學是用Hexo的模組來建立部落格。
-好像是中國人寫的程式，簡單好懂而且直接用模板就弄得漂漂亮亮的，跟以前什麼無名小站之類的差蠻多的。
-然而需要改許多比較底層的東西，還是挺好玩的。
-花較多時間是建立git與Nodejs的環境，畢竟之前不常碰網路這塊，常常缺套件就卡在那邊。
-大考前東摸西摸的習慣，還非得玩出個段落才會罷休，這次也不例外呢。
-至於Hexo+Github的建立方法網路上蠻多教學的，之後再套用交大nctu.me的網域來試試看。
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="生活">生活</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/12/03/FreeBSD-Console-Resolution-Setting/" title="FreeBSD Console Resolution Setting">
+                    <div class="prevTitle">FreeBSD Console Resolution Setting</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 評論插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 評論 -->
 </main>
             <!-- profile -->
             
@@ -652,6 +518,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -933,6 +817,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

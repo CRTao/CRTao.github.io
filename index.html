@@ -359,6 +359,47 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/12/26/FreeBSD-Passwd-Recovery/">
+            
+                <span>FreeBSD Passwd Recovery</span>
+        </a>
+        <div class="abstract-content">
+            把使用者的密碼改壞了，這邊紀錄一下修復方法。
+
+Bootup時選擇 Single User Mode，
+這個 Enter full pathname of shell of RETURN for /bin/sh: 不管它，Enter。
+然後掛接目前(所有)的地方
+1mount  ##或 mount -a
+通常預設的 / 是 read-only，這時候編輯都會被擋住，
+輸入
+1mount -u /
+之後就可以編輯系統囉。
+如果忘記密碼的這時候打 passwd (username)就可以改密碼了。
+
+寫ShellScript, ZFS管理, 架FTP Server, 架Web Server。...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="FreeBSD">FreeBSD</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/12/03/FreeBSD-Console-Resolution-Setting/">
             
                 <span>FreeBSD Console Resolution Setting</span>
@@ -757,43 +798,11 @@ Paragr...
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/11/嘗試做部落格/">
-            
-                <span>嘗試做部落格</span>
-        </a>
-        <div class="abstract-content">
-            起因是看到同學有做，明明沒放什麼東西卻感覺潮到歪頭。所以也想動手玩玩看~
-瀏覽著就有注意到同學是用Hexo的模組來建立部落格。
-好像是中國人寫的程式，簡單好懂而且直接用模板就弄得漂漂亮亮的，跟以前什麼無名小站之類的差蠻多的。
-然而需要改許多比較底層的東西，還是挺好玩的。
-花較多時間是建立git與Nodejs的環境，畢竟之前不常碰網路這塊，常常缺套件就卡在那邊。
-大考前東摸西摸的習慣，還非得玩出個段落才會罷休，這次也不例外呢。
-至於Hexo+Github的建立方法網路上蠻多教學的，之後再套用交大nctu.me的網域來試試看。
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="生活">生活</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
+    </nav>
     
 </main>
             <!-- profile -->
@@ -1041,42 +1050,9 @@ Paragr...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 10
+        Total : 11
         </div>
         <!-- search  -->
         
@@ -1089,6 +1065,11 @@ Paragr...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/26</span><a class="archive-post-title" href="/2019/12/26/FreeBSD-Passwd-Recovery/">FreeBSD Passwd Recovery</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1149,11 +1130,11 @@ Paragr...
     
         <span class="sidebar-tag-name" data-tags="運動"><span class="iconfont-archer">&#xe606;</span>運動</span>
     
-        <span class="sidebar-tag-name" data-tags="程式"><span class="iconfont-archer">&#xe606;</span>程式</span>
-    
         <span class="sidebar-tag-name" data-tags="遊戲"><span class="iconfont-archer">&#xe606;</span>遊戲</span>
     
         <span class="sidebar-tag-name" data-tags="碧藍幻想"><span class="iconfont-archer">&#xe606;</span>碧藍幻想</span>
+    
+        <span class="sidebar-tag-name" data-tags="程式"><span class="iconfont-archer">&#xe606;</span>程式</span>
     
         <span class="sidebar-tag-name" data-tags="專題"><span class="iconfont-archer">&#xe606;</span>專題</span>
     
