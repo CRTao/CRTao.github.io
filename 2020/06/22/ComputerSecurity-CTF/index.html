@@ -405,32 +405,32 @@ height:50vh;
 <p>感覺還蠻好玩的，這邊紀錄一下過程。</p>
 <p>作業總共有六題，前三題教導CTF比賽的過程，後三題學習Buffer Overflow的觀念。</p>
 <hr>
-<h4 id="1-fildes"><a href="#1-fildes" class="headerlink" title="1. fildes"></a>1. fildes</h4><p><a href="https://blog.crtao.nctu.me/uploads/202006/fildes.c">Source Code</a></p>
+<h4 id="A-fildes"><a href="#A-fildes" class="headerlink" title="A. fildes"></a>A. fildes</h4><p><a href="https://blog.crtao.nctu.me/uploads/202006/fildes.c">Source Code</a></p>
 <p>很簡單。了解題目的目標是呼叫出 cat flag。</p>
 <blockquote>
 <p>FLAG{INCredible_Bu7_It5_jus7_4_13egin}</p>
 </blockquote>
 <p><br></p>
-<h4 id="2-you-should-read-manual"><a href="#2-you-should-read-manual" class="headerlink" title="2. you_should_read_manual"></a>2. you_should_read_manual</h4><p><a href="https://blog.crtao.nctu.me/uploads/202006/you_should_read_manual.c">Source Code</a></p>
+<h4 id="B-you-should-read-manual"><a href="#B-you-should-read-manual" class="headerlink" title="B. you_should_read_manual"></a>B. you_should_read_manual</h4><p><a href="https://blog.crtao.nctu.me/uploads/202006/you_should_read_manual.c">Source Code</a></p>
 <p>也是很簡單。了解基本的數學運算式與random函數的基礎。</p>
 <blockquote>
 <p>FLAG{1_C4NN07_L1V3_WO_M4Nual11111111111}</p>
 </blockquote>
 <p><br></p>
-<h4 id="3-nasty-rules"><a href="#3-nasty-rules" class="headerlink" title="3. nasty_rules"></a>3. nasty_rules</h4><p><a href="https://blog.crtao.nctu.me/uploads/202006/nasty_rules.c">Source Code</a></p>
+<h4 id="C-nasty-rules"><a href="#C-nasty-rules" class="headerlink" title="C. nasty_rules"></a>C. nasty_rules</h4><p><a href="https://blog.crtao.nctu.me/uploads/202006/nasty_rules.c">Source Code</a></p>
 <p>XOR Encryption中會用到的 XOR Key。</p>
 <p>觀察 兩個password間的關係就行了。</p>
 <blockquote>
 <p>FLAG{PU7_p4ren7he5es_N3x7_T1m3}</p>
 </blockquote>
 <p><br></p>
-<h4 id="4-time-will-stop"><a href="#4-time-will-stop" class="headerlink" title="4. time_will_stop"></a>4. time_will_stop</h4><p>這題沒有C Code。題目要求你解析binary file。</p>
-<p>$ xxd ./time_will_stop</p>
-<blockquote>
+<h4 id="D-time-will-stop"><a href="#D-time-will-stop" class="headerlink" title="D. time_will_stop"></a>D. time_will_stop</h4><p>這題沒有C Code。題目要求你解析binary file。</p>
+<pre><code>$ xxd ./time_will_stop
+</code></pre><blockquote>
 <p>FLAG{Bin4RyANaly515_S0_EZZZZZZzzzzz}</p>
 </blockquote>
 <p><br></p>
-<h4 id="5-agent-hacker"><a href="#5-agent-hacker" class="headerlink" title="5. agent_hacker"></a>5. agent_hacker</h4><p>這題開始要用到Buffer Overflow的技巧。</p>
+<h4 id="E-agent-hacker"><a href="#E-agent-hacker" class="headerlink" title="E. agent_hacker"></a>E. agent_hacker</h4><p>這題開始要用到Buffer Overflow的技巧。</p>
 <p>需要讓其中的參數Overflow來重新引導return address。</p>
 <p><a href="https://blog.crtao.nctu.me/uploads/202006/agent_hacker.c">Source Code</a></p>
 <p>觀察我們要的目標，是要呼叫函式 print_flag()。</p>
@@ -444,7 +444,7 @@ height:50vh;
 <p>FLAG{Y0U_sucH_Cr4Zy_Agen7_hack3R}</p>
 </blockquote>
 <p><br></p>
-<h4 id="6-ret-shellcode"><a href="#6-ret-shellcode" class="headerlink" title="6. ret_shellcode"></a>6. ret_shellcode</h4><p><a href="https://blog.crtao.nctu.me/uploads/202006/ret_shellcode.c">Source Code</a></p>
+<h4 id="F-ret-shellcode"><a href="#F-ret-shellcode" class="headerlink" title="F. ret_shellcode"></a>F. ret_shellcode</h4><p><a href="https://blog.crtao.nctu.me/uploads/202006/ret_shellcode.c">Source Code</a></p>
 <p>這題沒有函數有system command了。所以我們要建立shellcode。</p>
 <p>還好題目有提供name[0x100]給我們存需要的東西。</p>
 <p>預想將shellcode存入至Global variable中，</p>
@@ -477,7 +477,7 @@ height:50vh;
             <p>原文作者：<a href="http://blog.crtao.nctu.me">Ling Yin-Tao</a>
             </p><p>原文連結：<a href="http://blog.crtao.nctu.me/2020/06/22/ComputerSecurity-CTF/">http://blog.crtao.nctu.me/2020/06/22/ComputerSecurity-CTF/</a>
             </p><p>發表日期：<a href="http://blog.crtao.nctu.me/2020/06/22/ComputerSecurity-CTF/">June 22nd 2020, 10:13:16 pm</a>
-            </p><p>更新日期：<a href="http://blog.crtao.nctu.me/2020/06/22/ComputerSecurity-CTF/">June 22nd 2020, 11:34:32 pm</a>
+            </p><p>更新日期：<a href="http://blog.crtao.nctu.me/2020/06/22/ComputerSecurity-CTF/">June 23rd 2020, 12:06:01 am</a>
             </p><p>版權聲明：本文採用<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh_TW">知識共享署名-非商業性 4.0 國際許可協議</a>進行許可</p>
         </div>
     
@@ -595,7 +595,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-fildes"><span class="toc-number">1.</span> <span class="toc-text">1. fildes</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-you-should-read-manual"><span class="toc-number">2.</span> <span class="toc-text">2. you_should_read_manual</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-nasty-rules"><span class="toc-number">3.</span> <span class="toc-text">3. nasty_rules</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-time-will-stop"><span class="toc-number">4.</span> <span class="toc-text">4. time_will_stop</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-agent-hacker"><span class="toc-number">5.</span> <span class="toc-text">5. agent_hacker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-ret-shellcode"><span class="toc-number">6.</span> <span class="toc-text">6. ret_shellcode</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#A-fildes"><span class="toc-number">1.</span> <span class="toc-text">A. fildes</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B-you-should-read-manual"><span class="toc-number">2.</span> <span class="toc-text">B. you_should_read_manual</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-nasty-rules"><span class="toc-number">3.</span> <span class="toc-text">C. nasty_rules</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#D-time-will-stop"><span class="toc-number">4.</span> <span class="toc-text">D. time_will_stop</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#E-agent-hacker"><span class="toc-number">5.</span> <span class="toc-text">E. agent_hacker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#F-ret-shellcode"><span class="toc-number">6.</span> <span class="toc-text">F. ret_shellcode</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -773,9 +773,10 @@ top:50vh;
     
     
     
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 15
+        Total : 16
         </div>
         <!-- search  -->
         
@@ -788,6 +789,11 @@ top:50vh;
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/23</span><a class="archive-post-title" href="/2020/06/23/Storyboard-關於分鏡/">Storyboard ~ 關於分鏡</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -878,23 +884,25 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="程式"><span class="iconfont-archer">&#xe606;</span>程式</span>
-    
         <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
     
-        <span class="sidebar-tag-name" data-tags="運動"><span class="iconfont-archer">&#xe606;</span>運動</span>
-    
-        <span class="sidebar-tag-name" data-tags="專題"><span class="iconfont-archer">&#xe606;</span>專題</span>
+        <span class="sidebar-tag-name" data-tags="程式"><span class="iconfont-archer">&#xe606;</span>程式</span>
     
         <span class="sidebar-tag-name" data-tags="遊戲"><span class="iconfont-archer">&#xe606;</span>遊戲</span>
     
         <span class="sidebar-tag-name" data-tags="碧藍幻想"><span class="iconfont-archer">&#xe606;</span>碧藍幻想</span>
     
-        <span class="sidebar-tag-name" data-tags="畫畫"><span class="iconfont-archer">&#xe606;</span>畫畫</span>
+        <span class="sidebar-tag-name" data-tags="運動"><span class="iconfont-archer">&#xe606;</span>運動</span>
+    
+        <span class="sidebar-tag-name" data-tags="創作"><span class="iconfont-archer">&#xe606;</span>創作</span>
+    
+        <span class="sidebar-tag-name" data-tags="專題"><span class="iconfont-archer">&#xe606;</span>專題</span>
     
         <span class="sidebar-tag-name" data-tags="FreeBSD"><span class="iconfont-archer">&#xe606;</span>FreeBSD</span>
     
         <span class="sidebar-tag-name" data-tags="電腦安全"><span class="iconfont-archer">&#xe606;</span>電腦安全</span>
+    
+        <span class="sidebar-tag-name" data-tags="分鏡"><span class="iconfont-archer">&#xe606;</span>分鏡</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
