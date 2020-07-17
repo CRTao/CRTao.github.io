@@ -351,16 +351,14 @@
                 <span>FreeBSD Router and Firewall</span>
         </a>
         <div class="abstract-content">
-            虛擬機太多台了，後續可能會清掉幾台，來記錄一下一些內容。
-
-1. 環境說明這台主要用途為Router。  Network Interface如下:
-em0: VirtualBox NAT 虛擬機
-em1: Router IP。Interface for Internal network
-em2: Host-Only Interface, SSH 用途
-lo0: localhost
-wg0: VPN for NASA classmates
-1234567891011121314151617181920212223242526272829303132333435363738$ ifconfi...
-        </div>
+            <p>虛擬機太多台了，後續可能會清掉幾台，來記錄一下一些內容。</p>
+<hr>
+<h4 id="1-環境說明"><a href="#1-環境說明" class="headerlink" title="1. 環境說明"></a>1. 環境說明</h4><p>這台主要用途為Router。  Network Interface如下:</p>
+<p>em0: VirtualBox NAT 虛擬機</p>
+<p>em1: Router IP。Interface for Internal network</p>
+<p>em2: Host-Only Interface, SSH 用途</p>
+<p>...
+        </p></div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
@@ -388,21 +386,12 @@ wg0: VPN for NASA classmates
                 <span>FreeBSD Passwd Recovery</span>
         </a>
         <div class="abstract-content">
-            把使用者的密碼改壞了，這邊紀錄一下修復方法。
-
-Bootup時選擇 Single User Mode，
-這個 Enter full pathname of shell of RETURN for /bin/sh: 不管它，Enter。
-然後掛接目前(所有)的地方
-123mount 或mount -a
-通常預設的 / 是 read-only，這時候編輯都會被擋住，
-輸入
-1mount -u /
-之後就可以編輯系統囉。
-如果忘記密碼的這時候打 passwd (username)就可以改密碼了。
-
-寫ShellScript, ZFS管理, 架FTP Server, 架Web Server。
-現...
-        </div>
+            <p>把使用者的密碼改壞了，這邊紀錄一下修復方法。</p>
+<hr>
+<p>Bootup時選擇 Single User Mode，</p>
+<p>這個 Enter full pathname of shell of RETURN for /bin/sh: 不管它，Enter。</p>
+<p>然後掛接目前(所有)的地方</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><spa... < div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
@@ -417,7 +406,7 @@ Bootup時選擇 Single User Mode，
 </div>
             
         </div>
-    </article>
+    </spa...></pre></td></tr></table></figure></div></article>
     
     
     
@@ -430,18 +419,12 @@ Bootup時選擇 Single User Mode，
                 <span>FreeBSD Console Resolution Setting</span>
         </a>
         <div class="abstract-content">
-            雖然已經設定了SSH，不會直接使用機器的Console進行操作，還是在這邊紀錄一下。
-
-在 /boot/loader.conf 新增
-1kern.vty=sc
-重啟後應該可以 kldload vesa 了。除非boot完是在UEFI或EFI模式下。
-之後輸入 vidcontrol -i mode 可以檢視解析度編號，如果沒有再爬文找吧。
-找到需要的編號後，在 /etc/rc.conf 新增
-1allscreens_flags=&quot;MODE_273&quot;
-重啟後就有新的解析度了。
-設定完已經3個月了，憑記憶筆記的可能會錯。
-
-        </div>
+            <p>雖然已經設定了SSH，不會直接使用機器的Console進行操作，還是在這邊紀錄一下。</p>
+<hr>
+<p>在 /boot/loader.conf 新增</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kern.vty=sc</span><br></pre></td></tr></table></figure>
+<p>重啟後...
+        </p></div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
@@ -536,6 +519,10 @@ Bootup時選擇 Single User Mode，
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
     
     
     
@@ -820,25 +807,25 @@ Bootup時選擇 Single User Mode，
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="程式"><span class="iconfont-archer">&#xe606;</span>程式</span>
+    
         <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
     
-        <span class="sidebar-tag-name" data-tags="運動"><span class="iconfont-archer">&#xe606;</span>運動</span>
+        <span class="sidebar-tag-name" data-tags="創作"><span class="iconfont-archer">&#xe606;</span>創作</span>
     
-        <span class="sidebar-tag-name" data-tags="程式"><span class="iconfont-archer">&#xe606;</span>程式</span>
+        <span class="sidebar-tag-name" data-tags="專題"><span class="iconfont-archer">&#xe606;</span>專題</span>
     
         <span class="sidebar-tag-name" data-tags="遊戲"><span class="iconfont-archer">&#xe606;</span>遊戲</span>
     
         <span class="sidebar-tag-name" data-tags="碧藍幻想"><span class="iconfont-archer">&#xe606;</span>碧藍幻想</span>
     
-        <span class="sidebar-tag-name" data-tags="專題"><span class="iconfont-archer">&#xe606;</span>專題</span>
-    
-        <span class="sidebar-tag-name" data-tags="創作"><span class="iconfont-archer">&#xe606;</span>創作</span>
+        <span class="sidebar-tag-name" data-tags="運動"><span class="iconfont-archer">&#xe606;</span>運動</span>
     
         <span class="sidebar-tag-name" data-tags="FreeBSD"><span class="iconfont-archer">&#xe606;</span>FreeBSD</span>
     
-        <span class="sidebar-tag-name" data-tags="分鏡"><span class="iconfont-archer">&#xe606;</span>分鏡</span>
-    
         <span class="sidebar-tag-name" data-tags="電腦安全"><span class="iconfont-archer">&#xe606;</span>電腦安全</span>
+    
+        <span class="sidebar-tag-name" data-tags="分鏡"><span class="iconfont-archer">&#xe606;</span>分鏡</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
