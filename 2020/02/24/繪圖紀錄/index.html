@@ -17,7 +17,7 @@
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="Ling Yin-Tao">
     
-    <meta name="keywords" content=",Ling Yin-Tao">
+    <meta name="keywords" content="CRTao Website,Ling Yin-Tao">
     
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
@@ -194,6 +194,21 @@
     <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
     <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
     
+        <!-- algolia -->
+        <script>
+            
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"搜尋文章","hits_empty":"找不到相關字詞: ${query}","hits_stats":"共 ${hits} 項結果 (${time} ms)"}')
+
+            var algolia = {
+                applicationID: '5ONUHLJ268',
+                apiKey: 'deceeea69b053706e21e776efc6ff603',
+                indexName: 'dev_CRTaoWebsite',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    
     <!-- fancybox -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
@@ -214,14 +229,14 @@
     
     <div class="banner">
             <div class="blog-title">
-                <a href="/">漫無目的。</a>
+                <a href="/">漫無目的</a>
             </div>
             <div class="post-title">
                 <a href="#" class="post-name">繪圖紀錄</a>
             </div>
     </div>
     
-    <a class="home-link" href="/">漫無目的。</a>
+    <a class="home-link" href="/">漫無目的</a>
 </header>
     <div class="wrapper">
         <div class="site-intro" style="
@@ -508,7 +523,7 @@ height:50vh;
     <div class="busuanzi-container">
     
      
-    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    <span id="busuanzi_container_site_pv">Website Clicks: <span id="busuanzi_value_site_pv"></span></span>
     
     </div>
     
@@ -704,15 +719,15 @@ top:50vh;
     
     
     
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 16
         </div>
         <!-- search  -->
+        
+            <div class="site-search popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
         
     </div>
     
@@ -820,15 +835,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="程式"><span class="iconfont-archer">&#xe606;</span>程式</span>
     
-        <span class="sidebar-tag-name" data-tags="專題"><span class="iconfont-archer">&#xe606;</span>專題</span>
-    
         <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
+    
+        <span class="sidebar-tag-name" data-tags="運動"><span class="iconfont-archer">&#xe606;</span>運動</span>
     
         <span class="sidebar-tag-name" data-tags="遊戲"><span class="iconfont-archer">&#xe606;</span>遊戲</span>
     
         <span class="sidebar-tag-name" data-tags="碧藍幻想"><span class="iconfont-archer">&#xe606;</span>碧藍幻想</span>
     
-        <span class="sidebar-tag-name" data-tags="運動"><span class="iconfont-archer">&#xe606;</span>運動</span>
+        <span class="sidebar-tag-name" data-tags="專題"><span class="iconfont-archer">&#xe606;</span>專題</span>
     
         <span class="sidebar-tag-name" data-tags="創作"><span class="iconfont-archer">&#xe606;</span>創作</span>
     
@@ -896,6 +911,29 @@ jsonContent:
     </script>
     <script src="/scripts/main.js"></script>
     <!-- algolia -->
+    
+        <div class="site-search">
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="iconfont-archer">&#xe609;</i>
+    </span>
+  </div>
+</div>
+        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch.min.js" defer></script>
+        <script src="/scripts/search.js" defer></script>
     
     <!-- busuanzi  -->
     
